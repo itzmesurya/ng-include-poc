@@ -1,0 +1,31 @@
+{
+  "name": "ngIncludePOC",
+  "authors": [
+    "Surya <itzmesurya@gmail.com>"
+  ],
+  "description": "To test posibilities of ng-include",
+  "main": "index.html",
+  "keywords": [
+    "ng-include",
+    "partial",
+    "views",
+    "in",
+    "angular"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "bootstrap": "^3.3.7",
+    "angular-material": "^1.1.5",
+    "angular-route": "^1.6.6",
+    "angular-ui-router": "^1.0.6"
+  }
+}

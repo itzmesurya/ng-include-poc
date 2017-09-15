@@ -1,0 +1,116 @@
+<html lang="en" ng-app="myapp" ng-controller="HomeController as vm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NG-Include POC</title>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app.module.js"></script>
+    <script src="/controllers/home.controller.js"></script>
+
+    <style>
+        .header-bar {
+            min-height: 50px;
+            width: 100%;
+            background-color: black;
+            margin: 0 0 20px 0;
+            color: white;
+        }
+
+        .header-bar-title {
+            vertical-align: middle;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 30px;
+            margin: 30px;
+        }
+
+        .flex-div {
+            margin: 15px;
+            border-radius: 5px;
+            border: 2px solid lightskyblue;
+            padding: 15px;
+        }
+
+        .col-class {
+            /* background-color: lightgreen; */
+            border-radius: 5px;
+            border: 2px solid lightskyblue;
+            padding: 15px;
+        }
+
+        .clear-fix {
+            clear: both;
+        }
+
+        .poc-select {
+            border: 0;
+            margin: 15px;
+            padding: 15px;
+            font-size: 18px;
+            background-color: lightskyblue;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .poc-select>option {
+            border: 0;
+            background-color: lightblue;
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-bar">
+        <span class="header-bar-title">Ng-Include POC</span>
+    </div>
+    <select class="poc-select" ng-change="vm.themeSelectChange($event)" ng-model="vm.scriptsHtml">
+        <option value="1">BootStrap</option>
+        <option value="2">Angular Material</option>
+    </select>
+
+    <div ng-include="vm.scripts"></div>
+    <div class="bs-html-content">
+        <div class="col-class col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content using column design of bootstrap
+                </div>
+            </div>
+        </div>
+        <div class="col-class col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content using column design of bootstrap
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear-fix"></div>
+    <div class="ng-material-html-content">
+        <div class="layout-row">
+            <div class="flex-100 flex-div">
+                Angular Material flex-100
+                <!-- <md-input-container >
+                    <input type="text" required
+                           placeholder="">
+                </md-input-container> -->
+            </div>
+            <div class="flex-100 flex-div">
+                Angular Material flex-100
+            </div>
+        </div>
+    </div>
+    <div class="clear-fix"></div>
+
+</body>
+
+</html>
